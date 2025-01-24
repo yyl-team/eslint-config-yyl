@@ -19,8 +19,7 @@
     "u": "yarn upgrade-interactive --latest",
     "eslint": "eslint --config ./eslint.config.js ./test/base",
     "prettier": "prettier --write ./",
-    "test": "npm run eslint && npm run prettier && npm run eslint",
-    "prepublishOnly": "npm run test"
+    "prepublishOnly": "npm run eslint && npm run prettier && npm run eslint"
   },
   "repository": {
     "type": "git",
@@ -52,5 +51,5 @@
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   },
-  "gitHead": "ecf448ccee07136aa44048354550c7204890d98a"
+  "gitHead": "1cc1296fa05fbe178ecead0d7421f91abb789b1f"
 }
