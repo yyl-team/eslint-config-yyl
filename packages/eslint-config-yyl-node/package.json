@@ -20,7 +20,7 @@
     "eslint": "eslint --config ./eslint.config.js ./test/base",
     "prettier": "prettier --write ./",
     "test": "npm run eslint && npm run prettier && npm run eslint",
-    "prepublishOnly": "npm test"
+    "prepublishOnly": "npm run test"
   },
   "repository": {
     "type": "git",
@@ -52,5 +52,5 @@
     "prettier": "^3.4.2",
     "typescript": "^5.7.3"
   },
-  "gitHead": "e3088f3b67e01791c60bd6450108a27280540baf"
+  "gitHead": "ecf448ccee07136aa44048354550c7204890d98a"
 }
