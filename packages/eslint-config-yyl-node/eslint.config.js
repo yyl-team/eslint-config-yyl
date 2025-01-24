@@ -442,26 +442,26 @@ export default [
       'n/no-unpublished-require': 'off',
       'n/no-unpublished-import': 'off',
       'n/no-extraneous-import': 'off',
-      'n/no-missing-import': 'off'
+      'n/no-missing-import': 'off',
       'n/no-process-exit': 'off',
 
       'prettier/prettier': ['error', prettierRule],
-      "@typescript-eslint/no-unused-vars": [
-        "warn",
+      '@typescript-eslint/no-unused-vars': [
+        'warn',
         {
-          "args": "all",
-          "argsIgnorePattern": "^_",
-          "caughtErrors": "all",
-          "caughtErrorsIgnorePattern": "^_",
-          "destructuredArrayIgnorePattern": "^_",
-          "varsIgnorePattern": "^_",
-          "ignoreRestSiblings": true
+          args: 'all',
+          argsIgnorePattern: '^_',
+          caughtErrors: 'all',
+          caughtErrorsIgnorePattern: '^_',
+          destructuredArrayIgnorePattern: '^_',
+          varsIgnorePattern: '^_',
+          ignoreRestSiblings: true
         }
       ],
       '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-require-imports': 'off',
-      '@typescript-eslint/no-use-before-define': ['error'],
+      '@typescript-eslint/no-use-before-define': ['error']
     }
   }
 ]
