@@ -428,6 +428,7 @@ export default [
       'import/no-webpack-loader-syntax': 'error',
       'import/no-named-as-default': 'off',
       'import/named': 'off',
+      'import/no-unresolved': 'off',
 
       'promise/param-names': 'error',
 
@@ -441,17 +442,26 @@ export default [
       'n/no-unpublished-require': 'off',
       'n/no-unpublished-import': 'off',
       'n/no-extraneous-import': 'off',
+      'n/no-missing-import': 'off'
+      'n/no-process-exit': 'off',
 
       'prettier/prettier': ['error', prettierRule],
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
         {
-          argsIgnorePattern: '^_'
+          "args": "all",
+          "argsIgnorePattern": "^_",
+          "caughtErrors": "all",
+          "caughtErrorsIgnorePattern": "^_",
+          "destructuredArrayIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "ignoreRestSiblings": true
         }
       ],
+      '@typescript-eslint/no-empty-object-type': 'off',
       '@typescript-eslint/no-explicit-any': 'off',
       '@typescript-eslint/no-require-imports': 'off',
-      '@typescript-eslint/no-use-before-define': ['error']
+      '@typescript-eslint/no-use-before-define': ['error'],
     }
   }
 ]
