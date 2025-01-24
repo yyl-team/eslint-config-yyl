@@ -16,27 +16,56 @@ npm i prettier@3 eslint@9 --save-dev
 
 ## usage
 
-修改 `package.json` 文件
+### prettier 配置
 
-```json
-{
-  "prettier": {
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "endOfLine": "lf",
-    "quoteProps": "consistent",
-    "trailingComma": "none"
-  },
-  "scripts": {
-    "eslint": "eslint ./",
-    "prettier": "prettier --write ./"
-  }
+根目录新增 `prettier.config.mjs`
+
+```js
+import nodePrettierRule from 'eslint-config-yyl-node/prettier.config.mjs'
+/** @type {import('prettier').Config} */
+export default {
+  ...nodePrettierRule
 }
 ```
 
-新增 `eslint.config.js`
+根目录新增 `.prettierignore`
+
+```
+**/js/lib/**
+**/__frag/**
+**/__gitcase/**
+.rpt2_cache
+dist/**
+**/dist/**
+output/**
+node_modules/**
+*.yml
+.gitignore
+.prettierignore
+yarn.lock
+.npmignore
+.**/*.map
+package-lock.json
+**/*.pug
+**/*.png
+**/*.jpg
+**/*.bmp
+**/*.jpeg
+**/*.gif
+**/*.pug**/*
+**/*.sh
+**/*.conf
+**/__frag/*
+.log
+**/*.log
+.DS_Store
+**/.DS_Store
+**/*.webp
+```
+
+### eslint 配置
+
+根目录新增 `eslint.config.mjs`
 
 ```js
 import yylNodeConfig from 'eslint-config-yyl-node'
@@ -55,34 +84,15 @@ export default [
 ]
 ```
 
-> 为了和 `prettier` 不打架，请按照 `package.json` 的 `prettier` 属性进行配置
+### npm script 配置
 
-## 自定义 prettier
-
-可以通过定义 `prettier/prettier` rules 来修改
+修改 `package.json`
 
 ```json
 {
-  "eslintConfig": {
-    "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "semi": true
-        }
-      ]
-    }
-  },
-  "prettier": {
-    "semi": true
+  "scripts": {
+    "eslint": "eslint ./",
+    "prettier": "prettier --write ./"
   }
 }
-```
-
-## prettierignore
-
-根目录创建 `.prettierignore`
-
-```
-node_modules/
 ```

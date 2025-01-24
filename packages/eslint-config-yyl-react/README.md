@@ -20,31 +20,56 @@ npm i prettier@3 eslint@9 --save-dev
 
 ## usage
 
-修改 `package.json` 文件, 加入 prettier 规则
+### prettier 配置
 
-```json
-{
-  "eslintConfig": {
-    "extends": ["yyl-react"]
-  },
-  "eslintIgnore": ["node_modules", "/dist", "/test", "**/js/lib"],
-  "prettier": {
-    "tabWidth": 2,
-    "semi": false,
-    "singleQuote": true,
-    "jsxSingleQuote": true,
-    "quoteProps": "consistent",
-    "trailingComma": "none",
-    "printWidth": 100
-  },
-  "scripts": {
-    "eslint": "eslint --ext=jsx,ts,tsx ./",
-    "prettier": "prettier --write ./**"
-  }
+根目录新增 `prettier.config.mjs`
+
+```js
+import prettierRule from 'eslint-config-yyl-react/prettier.config.mjs'
+/** @type {import('prettier').Config} */
+export default {
+  ...prettierRule
 }
 ```
 
-新建 `eslint.config.mjs` 文件
+根目录新增 `.prettierignore`
+
+```
+**/js/lib/**
+**/__frag/**
+**/__gitcase/**
+.rpt2_cache
+dist/**
+**/dist/**
+output/**
+node_modules/**
+*.yml
+.gitignore
+.prettierignore
+yarn.lock
+.npmignore
+.**/*.map
+package-lock.json
+**/*.pug
+**/*.png
+**/*.jpg
+**/*.bmp
+**/*.jpeg
+**/*.gif
+**/*.pug**/*
+**/*.sh
+**/*.conf
+**/__frag/*
+.log
+**/*.log
+.DS_Store
+**/.DS_Store
+**/*.webp
+```
+
+### eslint 配置
+
+根目录新增 `eslint.config.mjs`
 
 ```js
 import yylReactConfig from 'eslint-config-yyl-react'
@@ -63,27 +88,15 @@ export default [
 ]
 ```
 
-> 为了和 prettier 不打架，请按照 `package.json` 的 `prettier` 属性进行配置
+### npm script 配置
 
-## 定义 .prettierignore
+修改 `package.json`
 
-```
-**/js/lib/**
-dist/**
-output/**
-node_modules/**
-*.yml
-.gitignore
-.prettierignore
-yarn.lock
-package-lock.json
-**/*.png
-**/*.jpg
-**/*.bmp
-**/*.jpeg
-**/*.gif
-**/*.pug
-**/*.sh
-**/*.conf
-**/*.log
+```json
+{
+  "scripts": {
+    "eslint": "eslint ./",
+    "prettier": "prettier --write ./"
+  }
+}
 ```
