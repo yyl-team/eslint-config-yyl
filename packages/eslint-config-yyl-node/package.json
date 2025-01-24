@@ -1,0 +1,55 @@
+{
+  "name": "eslint-config-yyl-node",
+  "version": "5.0.0",
+  "description": "",
+  "maintainers": [
+    {
+      "name": "jackness1208",
+      "email": "jackness1208@qq.com"
+    }
+  ],
+  "main": "eslint.config.js",
+  "files": [
+    "eslint.config.js",
+    "prettier.config.mjs",
+    "README.md"
+  ],
+  "type": "module",
+  "scripts": {
+    "u": "yarn upgrade-interactive --latest",
+    "eslint": "eslint --config ./eslint.config.js ./test/base",
+    "prettier": "prettier --write ./",
+    "test": "npm run eslint && npm run prettier && npm run eslint",
+    "prepublishOnly": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jackness1208/eslint-config-yyl-node.git"
+  },
+  "author": "jackness",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jackness1208/eslint-config-yyl-node/issues"
+  },
+  "homepage": "https://github.com/jackness1208/eslint-config-yyl-node#readme",
+  "peerDependencies": {
+    "eslint": ">=9.0.0",
+    "prettier": ">=3.0.0",
+    "typescript": ">=5.0.0"
+  },
+  "dependencies": {
+    "@eslint/js": "^9.18.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-n": "^17.15.1",
+    "eslint-plugin-prettier": "^5.2.3",
+    "eslint-plugin-promise": "^7.2.1",
+    "globals": "^15.14.0",
+    "typescript-eslint": "^8.21.0"
+  },
+  "devDependencies": {
+    "eslint": "^9.18.0",
+    "prettier": "^3.4.2",
+    "typescript": "^5.7.3"
+  }
+}
